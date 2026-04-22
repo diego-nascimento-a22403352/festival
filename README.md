@@ -13,5 +13,6 @@
 
 * **`festival/templates/festival/dias.html`**
   * **O que mudei:** Este ficheiro não existia no meu projeto. Criei-o
+  
 * **`festival/templates/festival/concerto.html`**
   * **O que mudei:** Adicionei links no Dia e no Palco para voltar às páginas anteriores.
