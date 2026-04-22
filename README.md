@@ -1,7 +1,3 @@
-# Festival
-
----
-
 ## Alterações e Correções Implementadas
 
 ### (`festival/urls.py`)
