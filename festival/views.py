@@ -1,23 +1,22 @@
 from django.shortcuts import render
-from .models import Palco
-
+from .models import Palco, Dia, Concerto # IMPORTS CORRIGIDOS
 
 def index_view(request):
     return render(request, 'festival/index.html')
 
-
 def dias_view(request):
     dias = Dia.objects.all() 
-
     context = {'dias': dias}
-
     return render(request, 'festival/dias.html', context)
 
-
+# FUNÇÃO ADICIONADA
+def palcos_view(request):
+    palcos = Palco.objects.all()
+    context = {'palcos': palcos}
+    return render(request, 'festival/palcos.html', context)
 
 def concerto_view(request, id):
-    concerto = 
-
+    # QUERY CORRIGIDA
+    concerto = Concerto.objects.get(id=id)
     context = {'concerto': concerto}
-
     return render(request, 'festival/concerto.html', context)

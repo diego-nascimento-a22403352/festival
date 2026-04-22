@@ -1,0 +1,24 @@
+{% extends 'festival/layout.html' %}
+
+{% block content %}
+    <h2>Dias do Festival</h2>
+    <section>
+        {% for dia in dias %}
+            <article class="card" style="margin-bottom: 20px;">
+                <h3>📅 {{ dia.data }}</h3>
+                <ul>
+                    {% for concerto in dia.concertos.all %}
+                        <li>
+                            <a href="{% url 'concerto' concerto.id %}" style="color: #f5f5f5; text-decoration: none;">
+                                <strong>{{ concerto.banda.nome }}</strong>
+                            </a> 
+                            - {{ concerto.palco.nome }} ({{ concerto.hora }})
+                        </li>
+                    {% empty %}
+                        <li>Sem concertos agendados para este dia.</li>
+                    {% endfor %}
+                </ul>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}

@@ -1,13 +1,10 @@
 {% extends 'festival/layout.html' %}
 
 {% block content %}
-    
     <article class="card">
         <h2>{{ concerto.banda.nome }}</h2>
-        <p><strong>Dia:</strong> {{ concerto.dia }}</p>
-        <p><strong>Palco:</strong> {{ concerto.palco }}</p>
+        
+        <p><strong>Dia:</strong> <a href="{% url 'dias' %}">{{ concerto.dia.data }}</a></p>
+        <p><strong>Palco:</strong> <a href="{% url 'palcos' %}">{{ concerto.palco.nome }}</a></p>
     </article>
-
-    
 {% endblock %}
-    
